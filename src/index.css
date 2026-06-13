@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text overflow-x-hidden;
+  }
+}
+
+/* Texture Visuelle: global noise overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.05;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Micro-interactions utilities */
+.magnetic-btn {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+}
+.magnetic-btn:hover {
+  transform: scale(1.03);
+}
+
+.link-lift {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.link-lift:hover {
+  transform: translateY(-1px);
+}
+
+.card-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-lift:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
+}
+
+/* Text glow accent */
+.text-glow {
+  text-shadow: 0 0 20px rgba(123, 97, 255, 0.4);
+}
